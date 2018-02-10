@@ -1,0 +1,9 @@
+/**
+ * Place your custom CSS styles here.
+ **/
+
+.addToTheMap {}
+
+.addToTheMap:hover {
+    cursor: pointer;
+}
