@@ -54,8 +54,14 @@ function addToMapFunction(event) {
 
 	var article = $(header)[0].parentNode
 	var photographer = $($(header)[0].children[1].children[0].children[0].children[0]).attr("title")
+	var id = $($($(article)[0]).find('time')[0].parentNode).attr("href").split('/')[2]
 	var image = $($($(article)[0].children[1]).find('img')[0]).attr("src")
 
+	if (!image) {
+		var image = $($($(article)[0].children[1]).find('video')[0]).attr("src")
+	}
+
+	console.log("id: " + id)
 	console.log("location: " + location);
 	console.log("photographer: " + photographer);
 	console.log("image: " + image);
