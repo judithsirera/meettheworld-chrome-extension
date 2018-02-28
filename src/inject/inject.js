@@ -1,16 +1,15 @@
 
 var username = "";
-var data = firebaseManager.initFirebase();
+var data = "";
+
+firebaseManager.initFirebase();
 
 $( document ).ready(function () {
 	console.log("Ready!");
 
 	username = htmlElementsExtractor.getUsername();
 
-	if (data) {
-		data = data[username];
-		console.log(Object.keys(data).includes("377357"));
-	}
+	if (data) data = data[username];
 
 
 	//getFeed
