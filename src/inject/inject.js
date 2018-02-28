@@ -1,13 +1,16 @@
 
 var username = "";
-var data = "";
+var data = firebaseManager.initFirebase();
 
 $( document ).ready(function () {
 	console.log("Ready!");
-	data = firebaseManager.initFirebase();
-
-
 	username = htmlElementsExtractor.getUsername();
+
+	if (data) {
+		data = data[username];
+		console.log(Object.keys(data).includes("377357"));
+	}
+
 
 	//getFeed
 	var feed = htmlElementsExtractor.getFeed();
@@ -34,7 +37,7 @@ $( document ).ready(function () {
 			});
 
 			//add event listener
-			$( allHeaders ).find(addButtonManager.jQueryClass).click(addButtonManager.addButtonHandler)
+			$( allHeaders ).find(addButtonManager.jQueryClass).click(addButtonManager.buttonHandler)
 		}
 	})
 

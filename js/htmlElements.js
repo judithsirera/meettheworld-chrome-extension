@@ -64,7 +64,7 @@ var addButtonManager = {
     return button;
   },
 
-  addButtonHandler: function (event) {
+  buttonHandler: function (event) {
 
   	if (!htmlElementsExtractor.getLocation(event.target)) return;
 
@@ -86,6 +86,6 @@ var addButtonManager = {
     }
 
     //Save data
-    firebaseManager.saveToFirebase(username, locationData);
+    firebaseManager.saveToFirebase(locationData);
   }
 }
