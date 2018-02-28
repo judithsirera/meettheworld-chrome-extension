@@ -56,7 +56,7 @@ var addButtonManager = {
   jQueryClass: ".addToTheMap",
   btnClass: "addToTheMap",
 
-  createAddButton: function () {
+  getTemplate: function () {
     //Create button model
     var button = document.createElement("h1");
     $(button).addClass(this.btnClass).html("add");
@@ -65,7 +65,6 @@ var addButtonManager = {
   },
 
   addButtonHandler: function (event) {
-
     console.log("post id: " + htmlElementsExtractor.getPostID(event.target));
 
   	if (!htmlElementsExtractor.getLocation(event.target)) return;

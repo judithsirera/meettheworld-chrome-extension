@@ -4,7 +4,6 @@
   "manifest_version": 2,
   "description": "This extension was created for collecting the best spots arround the world from instagram pics",
   "homepage_url": "http://judithsirera.com",
-  "web_accessible_resources": ["js/firebaseManager.js", "js/firebase.js"],
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
@@ -40,7 +39,8 @@
       "js": [
         "js/jquery/jquery.js",
         "js/htmlElements.js",
-        "src/inject/firebase.js",
+        "js/firebase.js",
+        "js/firebaseManager.js",
         "src/inject/inject.js"
       ],
       "run_at": "document_end"
