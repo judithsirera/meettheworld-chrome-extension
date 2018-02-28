@@ -1,9 +1,13 @@
 
 var username = "";
+var data = "";
 
 $( document ).ready(function () {
 	console.log("Ready!");
-	firebaseManager.initFirebase();
+	data = firebaseManager.initFirebase();
+
+
+	username = htmlElementsExtractor.getUsername();
 
 	//getFeed
 	var feed = htmlElementsExtractor.getFeed();

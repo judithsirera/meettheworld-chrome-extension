@@ -65,14 +65,27 @@ var addButtonManager = {
   },
 
   addButtonHandler: function (event) {
-    console.log("post id: " + htmlElementsExtractor.getPostID(event.target));
 
   	if (!htmlElementsExtractor.getLocation(event.target)) return;
 
-  	console.log("location: " + htmlElementsExtractor.getLocation(event.target));
-  	console.log("location ID: " + htmlElementsExtractor.getLocationID(event.target));
-  	console.log("photographer: " + htmlElementsExtractor.getPhotographer(event.target));
-  	console.log("image: " + htmlElementsExtractor.getImageOrVideo(event.target));
+    //Prepare data
+    var locationData = {
+      locationID: htmlElementsExtractor.getLocationID(event.target),
+      location: {
+        locationName: htmlElementsExtractor.getLocation(event.target),
+        coord: {
+          lat: "",
+          long: "",
+        },
+        postId: htmlElementsExtractor.getPostID(event.target),
+        post: {
+          photographer: htmlElementsExtractor.getPhotographer(event.target),
+          image: htmlElementsExtractor.getImageOrVideo(event.target)
+        }
+      }
+    }
 
+    //Save data
+    firebaseManager.saveToFirebase(username, locationData);
   }
 }
