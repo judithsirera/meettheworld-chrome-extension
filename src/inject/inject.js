@@ -4,6 +4,7 @@ var data = firebaseManager.initFirebase();
 
 $( document ).ready(function () {
 	console.log("Ready!");
+
 	username = htmlElementsExtractor.getUsername();
 
 	if (data) {

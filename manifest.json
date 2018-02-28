@@ -26,7 +26,10 @@
     "chrome://favicon/",
     "contentSettings",
     "cookies",
-    "https://instagram.com/*"
+    "webRequest",
+    "*://*.instagram.com/*",
+    "*://www.google.com/*"
+
   ],
   "content_scripts": [
     {
@@ -41,6 +44,7 @@
         "js/htmlElements.js",
         "js/firebase.js",
         "js/firebaseManager.js",
+        "js/instagramManager.js",
         "src/inject/inject.js"
       ],
       "run_at": "document_end"

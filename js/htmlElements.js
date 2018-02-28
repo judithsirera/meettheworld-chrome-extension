@@ -74,8 +74,8 @@ var addButtonManager = {
       location: {
         locationName: htmlElementsExtractor.getLocation(event.target),
         coord: {
-          lat: "",
-          long: "",
+          latitude: "",
+          longitude: "",
         },
         postId: htmlElementsExtractor.getPostID(event.target),
         post: {

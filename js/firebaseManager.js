@@ -29,12 +29,21 @@ var firebaseManager = {
         name: locationData.location.locationName,
         coord: locationData.location.coord,
       });
+
+      instagramManager.requestCoordsFromLocationID(locationData.locationID);
     }
 
     //Save location post:
     this.databaseRef.ref('users/' + username + '/' + locationData.locationID).child(locationData.location.postId).set({
       photographer: locationData.location.post.photographer,
       image: locationData.location.post.image
+    })
+  },
+
+  updateCoordsFirebase: function (locationID, longitude, latitude) {
+    this.databaseRef.ref('users/' + username + '/' + locationID).child('coord').set({
+      latitude: latitude,
+      longitude: longitude
     })
   },
 
