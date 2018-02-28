@@ -26,21 +26,6 @@ var firebaseManager = {
   },
 
   saveToFirebase: function (locationData) {
-
-    // //Save location data:
-    // console.log(data);
-    // if (!data || (data && !Object.keys(data).includes(locationData.locationID))) {
-    //   console.log(data);
-    //   if (data){console.log(Object.keys(data));
-    //   console.log(Object.keys(data).includes(locationData.locationID));}
-    //   this.databaseRef.ref('users/' + username).child(locationData.locationID).set({
-    //     name: locationData.location.locationName,
-    //     coord: locationData.location.coord,
-    //   });
-    //
-    //
-    // }
-
     if (!data | (data && !Object.keys(data).includes(locationData.locationID))) {
       this.databaseRef.ref('users').child(username).child(locationData.locationID).set({
         name: locationData.location.locationName,
@@ -67,6 +52,6 @@ var firebaseManager = {
   },
 
   deleteFromFirebase: function (locationID, postID) {
-    this.databaseRef.ref('users/' + username + '/' + locationID).child(postID).remove();
+    this.databaseRef.ref('users').child(username).child(locationID).child('posts').child(postID).remove();
   }
 }

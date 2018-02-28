@@ -11,7 +11,6 @@ $( document ).ready(function () {
 
 	if (data) data = data[username];
 
-
 	//getFeed
 	var feed = htmlElementsExtractor.getFeed();
 
@@ -23,7 +22,7 @@ $( document ).ready(function () {
 		if ($( node.target ).is('article')) {
 
 			//Remove all
-			$( addButtonManager.jQueryClass ).remove();
+			$( addButtonManager.jQueryClassFormat ).remove();
 
 			//get all headers and add button
 			var allHeaders = htmlElementsExtractor.getAllHeaders();
@@ -32,12 +31,12 @@ $( document ).ready(function () {
 			//delete buttons from headers without Location
 			$( allHeaders ).each(function (index){
 				if ($($( allHeaders )[index].children[1].children[1].children).length == 0) {
-					$($($( allHeaders )[index]).find(addButtonManager.jQueryClass)).remove()
+					$($($( allHeaders )[index]).find(addButtonManager.jQueryClassFormat)).remove()
 				}
 			});
 
 			//add event listener
-			$( allHeaders ).find(addButtonManager.jQueryClass).click(addButtonManager.buttonHandler)
+			$( allHeaders ).find(addButtonManager.jQueryClassFormat).click(addButtonManager.buttonHandler)
 		}
 	})
 

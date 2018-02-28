@@ -53,39 +53,56 @@ var htmlElementsExtractor = {
 
 
 var addButtonManager = {
-  jQueryClass: ".addToTheMap",
+	_DELETE : "DELETE",
+	_ADD: "ADD",
+	_ACTION: "action",
+  jQueryClassFormat: ".addToTheMap",
   btnClass: "addToTheMap",
 
   getTemplate: function () {
     //Create button model
     var button = document.createElement("h1");
-    $(button).addClass(this.btnClass).html("add");
+    $(button).addClass(this.btnClass).attr("action", this._ADD).html("add");
 
     return button;
   },
 
+	getLocationObject: function (event) {
+		var locationData = {
+	    locationID: htmlElementsExtractor.getLocationID(event.target),
+	    location: {
+	      locationName: htmlElementsExtractor.getLocation(event.target),
+	      coord: {
+	        latitude: "",
+	        longitude: "",
+	      },
+	      postId: htmlElementsExtractor.getPostID(event.target),
+	      post: {
+	        photographer: htmlElementsExtractor.getPhotographer(event.target),
+	        image: htmlElementsExtractor.getImageOrVideo(event.target)
+	      }
+	    }
+		}
+
+		return locationData;
+	},
+
   buttonHandler: function (event) {
-
   	if (!htmlElementsExtractor.getLocation(event.target)) return;
-
     //Prepare data
-    var locationData = {
-      locationID: htmlElementsExtractor.getLocationID(event.target),
-      location: {
-        locationName: htmlElementsExtractor.getLocation(event.target),
-        coord: {
-          latitude: "",
-          longitude: "",
-        },
-        postId: htmlElementsExtractor.getPostID(event.target),
-        post: {
-          photographer: htmlElementsExtractor.getPhotographer(event.target),
-          image: htmlElementsExtractor.getImageOrVideo(event.target)
-        }
-      }
-    }
+    var locationData = addButtonManager.getLocationObject(event);
 
-    //Save data
-    firebaseManager.saveToFirebase(locationData);
+		if ($( event.target ).attr(addButtonManager._ACTION) == addButtonManager._ADD) {
+			//ADD TO DATABASE
+			firebaseManager.saveToFirebase(locationData);
+			$( event.target ).html('del').attr(addButtonManager._ACTION, addButtonManager._DELETE);
+			console.log("added");
+		} else if ($( event.target ).attr(addButtonManager._ACTION) == addButtonManager._DELETE) {
+			//DELETE FROM DATABASE
+			firebaseManager.deleteFromFirebase(locationData.locationID, locationData.location.postId);
+			$( event.target ).html('add').attr(addButtonManager._ACTION, addButtonManager._ADD);
+			console.log("deleted");
+		}
+
   }
 }
