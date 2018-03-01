@@ -30,7 +30,6 @@
     "webRequest",
     "*://*.instagram.com/*",
     "*://www.google.com/*"
-
   ],
   "content_scripts": [
     {

@@ -70,11 +70,20 @@ var addButtonManager = {
 		this.deleteSrc = chrome.extension.getURL(this.deleteURL);
 	},
 
-  getTemplate: function () {
+  getAddTemplate: function () {
     //Create button model
     var button = document.createElement("img");
 		button.src = this.addSrc;
     $(button).addClass(this.btnClass).attr("action", this._ADD);
+
+    return button;
+  },
+
+	getDeleteTemplate: function () {
+    //Create button model
+    var button = document.createElement("img");
+		button.src = this.deleteSrc;
+    $(button).addClass(this.btnClass).attr("action", this._DELETE);
 
     return button;
   },
@@ -129,5 +138,30 @@ var addButtonManager = {
 		}
 
 		firebaseManager.setData();
-  }
+  },
+
+	appendButton: function (header) {
+		if ($($(header)[0].children[1].children[1])[0].childElementCount > 0) {
+
+			var button = this.getAddTemplate();
+
+			if (data) {
+				var locationID = $($(header)[0].children[1].children[1].children[0]).attr("href").split('/')[3];
+				var article = $(header)[0].parentNode;
+				var postID = $($($(article)[0]).find('time')[0].parentNode).attr("href").split('/')[2];
+
+				if (data[locationID]) {
+					if (data[locationID].posts) {
+						if(data[locationID].posts[postID]) {
+							button = this.getDeleteTemplate();
+						}
+					}
+				}
+			}
+
+			header.appendChild(button);
+
+			$( button ).click(this.buttonHandler);
+		}
+	}
 }
