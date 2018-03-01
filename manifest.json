@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "manifest_version": 2,
   "description": "This extension was created for collecting the best spots arround the world from instagram pics",
-  "homepage_url": "http://judithsirera.com",
+  "homepage_url": "https://judsirera.github.io/instatravel/",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
