@@ -34,7 +34,6 @@ var firebaseManager = {
       })
       console.log("new location");
       instagramManager.requestCoordsFromLocationID(locationData.locationID);
-      this.setData();
     }
 
     //Save location post:
@@ -42,6 +41,7 @@ var firebaseManager = {
       photographer: locationData.location.post.photographer,
       image: locationData.location.post.image
     })
+
   },
 
   updateCoordsFirebase: function (locationID, longitude, latitude) {

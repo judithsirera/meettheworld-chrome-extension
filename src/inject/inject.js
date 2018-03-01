@@ -9,7 +9,9 @@ $( document ).ready(function () {
 
 	username = htmlElementsExtractor.getUsername();
 
-	if (data) data = data[username];
+	if (data) {
+		data = data[username];
+	}
 
 	//getFeed
 	var feed = htmlElementsExtractor.getFeed();
@@ -34,6 +36,26 @@ $( document ).ready(function () {
 					$($($( allHeaders )[index]).find(addButtonManager.jQueryClassFormat)).remove()
 				}
 			});
+
+			//change action from posts already saved
+			$( addButtonManager.jQueryClassFormat ).each(function (index, value) {
+
+				if (!data) {
+					return;
+				}
+
+				var locationID = htmlElementsExtractor.getLocationID(value);
+				var postID = htmlElementsExtractor.getPostID(value);
+
+				if (Object.keys(data).includes(locationID)) {
+					if (data[locationID].posts) {
+						if (Object.keys(data[locationID].posts).includes(postID)) {
+							//$(value).html('del').attr(addButtonManager._ACTION, addButtonManager._DELETE);
+						}
+					}
+				}
+			})
+
 
 			//add event listener
 			$( allHeaders ).find(addButtonManager.jQueryClassFormat).click(addButtonManager.buttonHandler)

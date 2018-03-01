@@ -104,5 +104,6 @@ var addButtonManager = {
 			console.log("deleted");
 		}
 
+		firebaseManager.setData();
   }
 }
