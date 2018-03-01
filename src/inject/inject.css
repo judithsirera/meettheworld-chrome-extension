@@ -2,7 +2,11 @@
  * Place your custom CSS styles here.
  **/
 
-.addToTheMap {}
+.addToTheMap {
+  width: auto !important;
+  height: 30px !important;
+
+}
 
 .addToTheMap:hover {
     cursor: pointer;

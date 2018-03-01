@@ -4,10 +4,11 @@
   "manifest_version": 2,
   "description": "This extension was created for collecting the best spots arround the world from instagram pics",
   "homepage_url": "https://judsirera.github.io/instatravel/",
+  "web_accessible_resources": ["images/*.png"],
   "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
+    "16": "icons/icon_16.png",
+    "48": "icons/icon_48.png",
+    "128": "icons/icon_128.png"
   },
   "default_locale": "en",
   "background": {
@@ -18,7 +19,7 @@
   },
   "options_page": "src/options/index.html",
   "browser_action": {
-    "default_icon": "icons/icon19.png",
+    "default_icon": "icons/icon_19.png",
     "default_title": "InstaTravel",
     "default_popup": "src/browser_action/browser_action.html"
   },

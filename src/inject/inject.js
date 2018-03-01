@@ -2,6 +2,7 @@
 var username = "";
 var data = "";
 
+addButtonManager.initURL();
 firebaseManager.initFirebase();
 
 $( document ).ready(function () {
