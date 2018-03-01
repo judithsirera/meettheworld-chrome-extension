@@ -128,13 +128,11 @@ var addButtonManager = {
 			firebaseManager.saveToFirebase(locationData);
 			addButtonManager.changeToDelete(event.target);
 			//$( event.target ).html('del').attr(addButtonManager._ACTION, addButtonManager._DELETE);
-			console.log("added");
 		} else if ($( event.target ).attr(addButtonManager._ACTION) == addButtonManager._DELETE) {
 			//DELETE FROM DATABASE
 			firebaseManager.deleteFromFirebase(locationData.locationID, locationData.location.postId);
 			addButtonManager.changeToAdd(event.target);
 			//$( event.target ).html('add').attr(addButtonManager._ACTION, addButtonManager._ADD);
-			console.log("deleted");
 		}
 
 		firebaseManager.setData();

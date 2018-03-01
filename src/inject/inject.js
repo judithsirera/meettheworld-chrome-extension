@@ -19,7 +19,6 @@ $( document ).ready(function () {
 	var feed = htmlElementsExtractor.getFeed();
 
 	var allHeaders = htmlElementsExtractor.getAllHeaders();
-	console.log($('header'));
 	$('header').each(function (index, value) {
 		addButtonManager.appendButton(value);
 	})

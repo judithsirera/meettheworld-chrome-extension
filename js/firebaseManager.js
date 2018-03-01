@@ -32,7 +32,6 @@ var firebaseManager = {
         coord: locationData.location.coord,
         posts: '',
       })
-      console.log("new location");
       instagramManager.requestCoordsFromLocationID(locationData.locationID);
     }
 
@@ -52,6 +51,14 @@ var firebaseManager = {
   },
 
   deleteFromFirebase: function (locationID, postID) {
-    this.databaseRef.ref('users').child(username).child(locationID).child('posts').child(postID).remove();
+
+    if (data[locationID].posts[postID] && Object.keys(data[locationID].posts).length <= 1) {
+      this.databaseRef.ref('users').child(username).child(locationID).remove();
+    } else {
+      this.databaseRef.ref('users').child(username).child(locationID).child('posts').child(postID).remove();
+    }
+
+
+
   }
 }
