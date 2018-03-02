@@ -9,11 +9,12 @@ firebaseManager.initFirebase();
 
 $( document ).ready(function () {
 	username = htmlElementsExtractor.getUsername();
-	firebaseManager.setData();
+	console.log("username", username);
 
 	$('body').bind('DOMSubtreeModified', function () {
 		if (window.location.href != oldHref) {
 			oldHref = window.location.href;
+			firebaseManager.setData();
 			var interval = setInterval(function(){
 				if (htmlElementsExtractor.isLoaded() && data) {
 					clearInterval(interval);
@@ -33,8 +34,11 @@ function initApp() {
 	var feed = htmlElementsExtractor.getFeed();
 
 	var allHeaders = htmlElementsExtractor.getAllHeaders();
+
 	$('header').each(function (index, value) {
-		addButtonManager.appendButton(value);
+		if ($(value).attr('class') != '_mainc') {
+			addButtonManager.appendButton(value);
+		}
 	})
 
 	//detect when new article inserted to document_end

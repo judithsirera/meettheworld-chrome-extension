@@ -13,16 +13,15 @@ var firebaseManager = {
   },
 
   setData: function () {
-    firebase.database().ref('/users/' + username + '/').once('value').then(function(snapshot) {
-      data = snapshot.val()[username];
+    firebase.database().ref('users').child(username).once('value').then(function(snapshot) {
+      data = snapshot.val();
+      console.log("data", data);
     });
   },
 
   initFirebase: function () {
     firebase.initializeApp(this.config);
     this.databaseRef = firebase.database();
-
-    this.setData()
   },
 
   saveToFirebase: function (locationData) {
