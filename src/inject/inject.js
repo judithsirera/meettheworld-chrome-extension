@@ -34,11 +34,13 @@ function initApp() {
 
 	var allHeaders = htmlElementsExtractor.getAllHeaders();
 
-	$('header').each(function (index, value) {
-		if ($(value).attr('class') != '_mainc') {
-			addButtonManager.appendButton(value);
-		}
-	})
+	if (!(window.location.href).includes('explore')) {
+		$(allHeaders).each(function (index, value) {
+			if ($(value).attr('class') != '_mainc' && $(value)[0].childElementCount > 1) {
+				addButtonManager.appendButton(value);
+			}
+		})
+	}
 
 	//detect when new article inserted to document_end
 	$( feed ).bind('DOMNodeInserted', function (node) {
