@@ -1,6 +1,10 @@
 
 
 var htmlElementsExtractor = {
+	isLoaded: function () {
+		return $('body')[0].children[0].children[0].children[0].childElementCount == 1;
+	},
+
 	getUsername: function () {
 		return $(".coreSpriteDesktopNavProfile").attr('href').split('/')[1];
 	},

@@ -25,10 +25,11 @@
   "permissions": [
     "chrome://favicon/",
     "contentSettings",
+    "tabs",
     "cookies",
     "webRequest",
-    "*://*.instagram.com/*",
-    "*://www.google.com/*"
+    "*://*.instagram.com/",
+    "*://*.instagram.com/p/*"
   ],
   "content_scripts": [
     {
