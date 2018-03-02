@@ -58,7 +58,5 @@ var firebaseManager = {
       this.databaseRef.ref('users').child(username).child(locationID).child('posts').child(postID).remove();
     }
 
-
-
   }
 }

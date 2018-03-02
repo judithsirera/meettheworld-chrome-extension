@@ -17,7 +17,6 @@
     ],
     "persistent": true
   },
-  "options_page": "src/options/index.html",
   "browser_action": {
     "default_icon": "icons/icon_19.png",
     "default_title": "InstaTravel",
