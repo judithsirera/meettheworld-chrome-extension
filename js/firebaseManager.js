@@ -14,7 +14,7 @@ var firebaseManager = {
 
   setData: function () {
     firebase.database().ref('/users/' + username + '/').once('value').then(function(snapshot) {
-      data = snapshot.val();
+      data = snapshot.val()[username];
     });
   },
 

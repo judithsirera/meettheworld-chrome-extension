@@ -1,4 +1,5 @@
 
+
 var username = "";
 var data = "";
 var oldHref = "";
@@ -7,13 +8,14 @@ addButtonManager.initURL();
 firebaseManager.initFirebase();
 
 $( document ).ready(function () {
+	username = htmlElementsExtractor.getUsername();
+	firebaseManager.setData();
 
 	$('body').bind('DOMSubtreeModified', function () {
 		if (window.location.href != oldHref) {
 			oldHref = window.location.href;
-			firebaseManager.setData();
 			var interval = setInterval(function(){
-				if (htmlElementsExtractor.isLoaded()) {
+				if (htmlElementsExtractor.isLoaded() && data) {
 					clearInterval(interval);
 					initApp();
 				}
@@ -26,13 +28,6 @@ $( document ).ready(function () {
 
 function initApp() {
 	console.log("Ready!");
-	console.log(data);
-
-	username = htmlElementsExtractor.getUsername();
-
-	if (data) {
-		data = data[username];
-	}
 
 	//getFeed
 	var feed = htmlElementsExtractor.getFeed();

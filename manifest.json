@@ -34,7 +34,8 @@
   "content_scripts": [
     {
       "matches": [
-        "https://www.instagram.com/*"
+        "*://*.instagram.com/",
+        "*://*.instagram.com/p/*"
       ],
       "css": [
         "src/inject/inject.css"
@@ -46,8 +47,7 @@
         "js/firebaseManager.js",
         "js/instagramManager.js",
         "src/inject/inject.js"
-      ],
-      "run_at": "document_end"
+      ]
     }
   ]
 }
