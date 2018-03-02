@@ -28,14 +28,12 @@
     "tabs",
     "cookies",
     "webRequest",
-    "*://*.instagram.com/",
-    "*://*.instagram.com/p/*"
+    "*://*.instagram.com/*"
   ],
   "content_scripts": [
     {
       "matches": [
-        "*://*.instagram.com/",
-        "*://*.instagram.com/p/*"
+        "*://*.instagram.com/*"
       ],
       "css": [
         "src/inject/inject.css"
