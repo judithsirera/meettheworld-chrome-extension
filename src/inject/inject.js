@@ -34,9 +34,9 @@ function initApp() {
 
 	var allHeaders = htmlElementsExtractor.getAllHeaders();
 
-	if (!(window.location.href).includes('explore')) {
+	if (!(window.location.href).includes('/explore/') && !(window.location.href).includes('/stories/')) {
 		$(allHeaders).each(function (index, value) {
-			if ($(value).attr('class') != '_mainc' && $(value)[0].childElementCount > 1) {
+			if ($(value).attr('class') != '_mainc' && $(value).attr('class') != '_5b1eb') {
 				addButtonManager.appendButton(value);
 			}
 		})
