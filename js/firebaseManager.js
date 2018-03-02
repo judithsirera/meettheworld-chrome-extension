@@ -15,7 +15,6 @@ var firebaseManager = {
   setData: function () {
     firebase.database().ref('users').child(username).once('value').then(function(snapshot) {
       data = snapshot.val();
-      console.log("data", data);
     });
   },
 

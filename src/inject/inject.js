@@ -9,7 +9,6 @@ firebaseManager.initFirebase();
 
 $( document ).ready(function () {
 	username = htmlElementsExtractor.getUsername();
-	console.log("username", username);
 
 	$('body').bind('DOMSubtreeModified', function () {
 		if (window.location.href != oldHref) {
