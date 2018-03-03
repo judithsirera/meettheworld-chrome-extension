@@ -2,7 +2,7 @@
   "name": "Meet The World",
   "version": "0.0.1",
   "manifest_version": 2,
-  "description": "Save your places based on pictures and visualize them in the map.",
+  "description": "Save the location of your favorite Instagram pictures and visualize them in a map.",
   "homepage_url": "https://judsirera.github.io/meettheworld/",
   "web_accessible_resources": ["images/*.png"],
   "icons": {
