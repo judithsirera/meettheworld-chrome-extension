@@ -11,3 +11,9 @@
 .addToTheMap:hover {
     cursor: pointer;
 }
+
+.openMap {
+  /* position: fixed;
+  bottom: 130px;
+  right: 100px; */
+}
