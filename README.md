@@ -10,9 +10,9 @@
 
 1. Go [here](https://chrome.google.com/webstore/detail/meet-the-world/dnjacdhjmipmijabeoocdgaglpbkbkpp) and install **Meet The World** Chrome extension
 
-2. Log in to [Instagram website page](https://www.instagram.com/)
+2. Log in to [Instagram website](https://www.instagram.com/)
 
-3. Start adding your pictures by clicking the **add** button. Remove that place from your collection by clicking again. *Only the posts with location will have the option to be saved*.
+3. Start adding your pictures by clicking the **add** button. Remove that place from your collection by clicking the **delete** button. *Only the posts with location will have the option to be saved*.
     * Add
 ![picture alt](screenshots/add_button.png "Add button")
 
