@@ -1,5 +1,6 @@
 # Meet The World
-**Meet The World** is an app for saving the location of your favorite Instagram pictures. Then, they are displayed in a map for allow the user to navigate through. Save your spots with the google chrome extension [(docs)](https://github.com/judsirera/meettheworld_ChromeExtension) and visualize it them on the website [(docs)](https://github.com/judsirera/meettheworld).
+
+**Meet The World** is an app for saving the location of your favorite Instagram pictures. Then, they are displayed on a map, allowing the user to navigate through them. Save your spots with the google chrome extension [(docs)](https://github.com/judsirera/meettheworld_ChromeExtension) and visualize it them on the website [(docs)](https://github.com/judsirera/meettheworld).
 
 ## Requirements
 - [x] Instagram account
@@ -7,7 +8,7 @@
 
 # Start
 
-1. Go [here](http://www.google.fr/) and install **Meet The World** Chrome extension
+1. Go [here](https://chrome.google.com/webstore/detail/meet-the-world/dnjacdhjmipmijabeoocdgaglpbkbkpp) and install **Meet The World** Chrome extension
 
 2. Log in to [Instagram website page](https://www.instagram.com/)
 
@@ -20,7 +21,7 @@
 
 4. Click on the Meet The World nav bar icon ![picture alt](screenshots/icon.png "Meet The World") or go to its website by clicking [here](https://judsirera.github.io/meettheworld/)
 
-5. If you haven't log in to Instagram website page, the website will ask you for log in. After that, your locations will be displayed ![picture alt](screenshots/meettheworld.png "Meet The World") Click on any of them for seeing the pictures ![picture alt](screenshots/meettheworld_location.png "Meet The World").
+5. If you haven't logged in to Instagram, the website will ask you to log in. After that, your locations will be displayed ![picture alt](screenshots/meettheworld.png "Meet The World") Click on any of them for seeing the pictures ![picture alt](screenshots/meettheworld_location.png "Meet The World").
 
 
 *This chrome extension only works for computer browsers*
