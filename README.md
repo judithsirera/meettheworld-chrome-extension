@@ -16,7 +16,7 @@
 ![picture alt](screenshots/add_button.png "Add button")
 
     * Delete
-![picture alt](screenshots/add_button.png "Delete button")
+![picture alt](screenshots/delete_button.png "Delete button")
 
 4. Click on the Meet The World nav bar icon ![picture alt](screenshots/icon.png "Meet The World") or go to its website by clicking [here](https://judsirera.github.io/meettheworld/)
 
