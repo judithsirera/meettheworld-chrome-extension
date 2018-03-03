@@ -1,5 +1,5 @@
 # Meet The World
-**Meet The World** is an app for saving the location of your favorite Instagram pictures. Then, they are displayed in a map for allow the user to navigate through. Save your spots with the google chrome extension ([doc])(https://github.com/judsirera/meettheworld_ChromeExtension) and visualize it them on the website ([doc])(https://github.com/judsirera/meettheworld).
+**Meet The World** is an app for saving the location of your favorite Instagram pictures. Then, they are displayed in a map for allow the user to navigate through. Save your spots with the google chrome extension [(docs)](https://github.com/judsirera/meettheworld_ChromeExtension) and visualize it them on the website [(docs)](https://github.com/judsirera/meettheworld).
 
 ## Requirements
 - [x] Instagram account
