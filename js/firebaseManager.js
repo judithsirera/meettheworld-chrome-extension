@@ -1,6 +1,7 @@
 
 
 var firebaseManager = {
+  isUserExisting: false,
   databaseRef: {},
 
   config: {

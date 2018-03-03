@@ -10,12 +10,13 @@ firebaseManager.initFirebase();
 $( document ).ready(function () {
 	username = htmlElementsExtractor.getUsername();
 
+
 	$('body').bind('DOMSubtreeModified', function () {
 		if (window.location.href != oldHref) {
 			oldHref = window.location.href;
 			firebaseManager.setData();
 			var interval = setInterval(function(){
-				if (htmlElementsExtractor.isLoaded() && data) {
+				if (htmlElementsExtractor.isLoaded()) {
 					clearInterval(interval);
 					initApp();
 				}
