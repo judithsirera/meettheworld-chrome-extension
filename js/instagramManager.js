@@ -1,6 +1,7 @@
 
 
 var instagramManager = {
+  username: "",
   token: '227452265.37ef44c.6aa376f9648144fe8d6f7caf06a92b90',
   requestApi: 'https://api.instagram.com/v1/locations/',
   requestToken: "",

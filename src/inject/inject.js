@@ -1,6 +1,6 @@
 
 
-var username = "";
+//var username = "";
 var data = "";
 var oldHref = "";
 
@@ -8,7 +8,8 @@ addButtonManager.initURL();
 firebaseManager.initFirebase();
 
 $( document ).ready(function () {
-	username = htmlElementsExtractor.getUsername();
+	instagramManager.username = htmlElementsExtractor.getUsername();
+	firebaseManager.setFirebaseUsername(instagramManager.username);
 
 
 	$('body').bind('DOMSubtreeModified', function () {
