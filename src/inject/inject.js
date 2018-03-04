@@ -33,7 +33,7 @@ function initApp() {
 
 	//Add button to map
 	if ($('.openMap').length == 0){
-		$($("._tpnch")[0].children[0]).append($('<div class="_b28md"><a class="openMap" target="_blank" href="https://judsirera.github.io/meettheworld/"><img src="' +
+		$($("._tpnch")[0].children[0]).append($('<div class="_b28md"><a class="openMap" target="_blank" href="http://meettheworld.judithsirera.com/"><img src="' +
 												chrome.extension.getURL('images/icon.png') +
 												'" height="26" alt=""></a></div>'));
 	}
