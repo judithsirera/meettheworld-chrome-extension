@@ -146,7 +146,6 @@ var addButtonManager = {
 		if ($($(header)[0].children[1].children[1])[0].childElementCount > 0) {
 
 			var button = this.getAddTemplate();
-
 			if (data) {
 				var locationID = $($(header)[0].children[1].children[1].children[0]).attr("href").split('/')[3];
 				var article = $(header)[0].parentNode;

@@ -11,11 +11,12 @@ $( document ).ready(function () {
 	instagramManager.username = htmlElementsExtractor.getUsername();
 	firebaseManager.setFirebaseUsername(instagramManager.username);
 
+	if (!oldHref) {firebaseManager.setData();}
 
 	$('body').bind('DOMSubtreeModified', function () {
 		if (window.location.href != oldHref) {
 			oldHref = window.location.href;
-			firebaseManager.setData();
+			if(!data) {firebaseManager.setData();}
 			var interval = setInterval(function(){
 				if (htmlElementsExtractor.isLoaded()) {
 					clearInterval(interval);
