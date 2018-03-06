@@ -19,10 +19,17 @@ var firebaseManager = {
     this.firebaseUsername = username.replace('.', '+');
   },
 
-  setData: function () {
+  initData: function () {
     firebase.database().ref('users').child(this.firebaseUsername).once('value').then(function(snapshot) {
       data = snapshot.val();
       firebaseManager.isDataInit = true;
+      app.init();
+    });
+  },
+
+  setData: function () {
+    firebase.database().ref('users').child(this.firebaseUsername).once('value').then(function(snapshot) {
+      data = snapshot.val();
     });
   },
 
