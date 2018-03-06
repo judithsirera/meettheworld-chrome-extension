@@ -4,6 +4,7 @@ var firebaseManager = {
   isUserExisting: false,
   databaseRef: {},
   firebaseUsername: "",
+  isDataInit: false,
 
   config: {
     apiKey: "AIzaSyCQKOJcxoH00rBPXxGRoqRiPp6m526AKkU",
@@ -16,18 +17,19 @@ var firebaseManager = {
 
   setFirebaseUsername: function (username){
     this.firebaseUsername = username.replace('.', '+');
-    console.log(this.firebaseUsername);
   },
 
   setData: function () {
     firebase.database().ref('users').child(this.firebaseUsername).once('value').then(function(snapshot) {
       data = snapshot.val();
+      firebaseManager.isDataInit = true;
     });
   },
 
   initFirebase: function () {
     firebase.initializeApp(this.config);
     this.databaseRef = firebase.database();
+    this.isDataInit = false;
   },
 
   saveToFirebase: function (locationData) {

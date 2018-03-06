@@ -1,7 +1,7 @@
 {
   "name": "Meet The World",
   "short_name": "meettheworld",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "manifest_version": 2,
   "description": "Save the location of your favorite Instagram pictures and visualize them in a map.",
   "homepage_url": "http://meettheworld.judithsirera.com/",

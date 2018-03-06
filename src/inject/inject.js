@@ -11,21 +11,40 @@ $( document ).ready(function () {
 	instagramManager.username = htmlElementsExtractor.getUsername();
 	firebaseManager.setFirebaseUsername(instagramManager.username);
 
-	if (!oldHref) {firebaseManager.setData();}
+	firebaseManager.setData();
 
-	$('body').bind('DOMSubtreeModified', function () {
-		if (window.location.href != oldHref) {
-			oldHref = window.location.href;
-			if(!data) {firebaseManager.setData();}
-			var interval = setInterval(function(){
-				if (htmlElementsExtractor.isLoaded()) {
-					clearInterval(interval);
-					initApp();
-				}
-			}, 10);
+	if (!firebaseManager.isDataInit) {
+		var checkData = setInterval(function () {
+			if(firebaseManager.isDataInit) {
+				$('body').bind('DOMSubtreeModified', function () {
+					if (window.location.href != oldHref) {
+						oldHref = window.location.href;
+						firebaseManager.setData();
+						var interval = setInterval(function(){
+							if (htmlElementsExtractor.isLoaded()) {
+								clearInterval(interval);
+								initApp();
+							}
+						}, 10);
+					}
+				})
+			}
+		}, 2)
+	} else {
+		$('body').bind('DOMSubtreeModified', function () {
+			if (window.location.href != oldHref) {
+				oldHref = window.location.href;
+				firebaseManager.setData();
+				var interval = setInterval(function(){
+					if (htmlElementsExtractor.isLoaded()) {
+						clearInterval(interval);
+						initApp();
+					}
+				}, 10);
+			}
+		})
+	}
 
-		}
-	})
 });
 
 
