@@ -51,7 +51,7 @@ var htmlElementsExtractor = {
 		var source = $($($(article)[0].children[1]).find('img')[0]).attr("src");
 
 		if (!source) {
-			source = $($($(article)[0].children[1]).find('video')[0]).attr("src");
+			source = $($($(article)[0].children[1]).find('video')[0]).attr("poster");
 		}
 		return source;
 	},
