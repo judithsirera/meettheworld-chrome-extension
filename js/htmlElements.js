@@ -147,7 +147,12 @@ var addButtonManager = {
 
 			var button = this.getAddTemplate();
 			if (data) {
-				var locationID = $($(header)[0].children[1].children[1].children[0]).attr("href").split('/')[3];
+				var a = $($(header)[0].children[1].children[1]).find('a');
+				var locationID = a[0];
+				if (a.length > 1) {
+					locationID = a[1];
+				}
+				locationID = $(locationID).attr("href").split('/')[3];
 				var article = $(header)[0].parentNode;
 				var postID = $($($(article)[0]).find('time')[0].parentNode).attr("href").split('/')[2];
 
