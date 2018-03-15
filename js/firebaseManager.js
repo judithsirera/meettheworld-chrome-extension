@@ -7,12 +7,12 @@ var firebaseManager = {
   isDataInit: false,
 
   config: {
-    apiKey: "AIzaSyCQKOJcxoH00rBPXxGRoqRiPp6m526AKkU",
-    authDomain: "instaplace-c3a25.firebaseapp.com",
-    databaseURL: "https://instaplace-c3a25.firebaseio.com",
-    projectId: "instaplace-c3a25",
-    storageBucket: "instaplace-c3a25.appspot.com",
-    messagingSenderId: "49535575943"
+    apiKey: YOUR_FIREBASE_APP_APIKEY,
+    authDomain: YOUR_FIREBASE_APP_AUTH_DOMAIN,
+    databaseURL: YOUR_FIREBASE_APP_DATABASE_URL,
+    projectId: YOUR_FIREBASE_APP_PROJECT_ID,
+    storageBucket: YOUR_FIREBASE_APP_STORE_BUCKET,
+    messagingSenderId: YOUR_FIREBASE_APP_MESSAGING_SENDER_ID
   },
 
   setFirebaseUsername: function (username){
