@@ -7,7 +7,7 @@
 - [x] Meet The World Chrome extension installed
 
 # Firebase Configuration
-Before starting you need to link this app to your firebase app. It has to be the same firebase app than Meet The World Website [docs](https://github.com/judsirera/meettheworld). For that, you just need to write you firebase app configuration parameters where the following code in [firebaseManajer.js](../blob/master/js/firebaseManajer.js):
+Before starting you need to link this app to your firebase app. It has to be the same firebase app than Meet The World Website [docs](https://github.com/judsirera/meettheworld). For that, you just need to write you firebase app configuration parameters where the following code in [firebaseManager.js](../master/js/firebaseManager.js):
 
 ```javascript
   config: {
@@ -22,7 +22,7 @@ Before starting you need to link this app to your firebase app. It has to be the
 These parameters are given by firebase when you [create a project in their console](https://console.firebase.google.com/)
 
 # Instagram Configuration
-Since the project is using the Instagram API you need to register your application as a [Instagram Developer](https://www.instagram.com/developer/). This application has to be a different one from Meet The World Website [docs](https://github.com/judsirera/meettheworld), otherwise you won't be allowed to request data. Once your application is registered, get your token with your Client Id and write it in [instagramManajer.js](../blob/master/js/instagramManager.js) where the following lines:
+Since the project is using the Instagram API you need to register your application as a [Instagram Developer](https://www.instagram.com/developer/). This application has to be a different one from Meet The World Website [docs](https://github.com/judsirera/meettheworld), otherwise you won't be allowed to request data. Once your application is registered, get your token with your Client Id and write it in [instagramManager.js](../master/js/instagramManager.js) where the following lines:
 
 ```javascript
   username: "",
