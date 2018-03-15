@@ -22,7 +22,7 @@ Before starting you need to link this app to your firebase app. It has to be the
 These parameters are given by firebase when you [create a project in their console](https://console.firebase.google.com/)
 
 # Instagram Configuration
-Since the project is using the Instagram API you need to register your application as a [Instagram Developer](https://www.instagram.com/developer/). This application has to be a different one from Meet The World Website [docs](https://github.com/judsirera/meettheworld), otherwise you won't be allowed to request data. Once your application is registered, get your token with your Client Id and write it in [firebaseManajer.js](../blob/master/js/instagramManager.js) where the following lines:
+Since the project is using the Instagram API you need to register your application as a [Instagram Developer](https://www.instagram.com/developer/). This application has to be a different one from Meet The World Website [docs](https://github.com/judsirera/meettheworld), otherwise you won't be allowed to request data. Once your application is registered, get your token with your Client Id and write it in [instagramManajer.js](../blob/master/js/instagramManager.js) where the following lines:
 
 ```javascript
   username: "",
