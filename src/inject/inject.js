@@ -42,7 +42,7 @@ var app = {
 
 		if (!(window.location.href).includes('/explore/') && !(window.location.href).includes('/stories/')) {
 			$(allHeaders).each(function (index, value) {
-				if ($(value).attr('class') != '_mainc' && $(value).attr('class') != '_5b1eb' && $(value).attr('class') != '_j5dqo') {
+				if (!$(value).attr('class').includes("_mainc") && !$(value).attr('class').includes("_5b1eb") && !$(value).attr('class').includes("_j5dqo") && !$(value).attr('class').includes("_qj3vj")) {
 					addButtonManager.appendButton(value);
 				}
 			})

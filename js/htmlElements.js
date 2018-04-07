@@ -152,8 +152,13 @@ var addButtonManager = {
 				if (a.length > 1) {
 					locationID = a[1];
 				}
+
 				locationID = $(locationID).attr("href").split('/')[3];
 				var article = $(header)[0].parentNode;
+
+				if (!$($(article)[0]).find('time')) {
+					return;	
+				}
 				var postID = $($($(article)[0]).find('time')[0].parentNode).attr("href").split('/')[2];
 
 				if (data[locationID]) {
